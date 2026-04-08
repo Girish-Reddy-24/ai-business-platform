@@ -30,7 +30,7 @@ with col3:
 
 if st.button("🚀 Analyze Customer"):
 
-    url = "http://127.0.0.1:8000/predict"
+    url = "https://ai-business-intelligence-platform.onrender.com/predict"
 
     payload = {
         "tenure": tenure,
@@ -91,7 +91,7 @@ days = st.slider("Select forecast duration (days)", 1, 30, 10)
 
 if st.button("📊 Generate Forecast"):
 
-    response = requests.get(f"http://127.0.0.1:8000/forecast?days={days}")
+    response = requests.get(f"https://ai-business-intelligence-platform.onrender.com/forecast?days={days}")
 
     if response.status_code == 200:
         forecast = response.json()["forecast"]
@@ -112,7 +112,7 @@ st.subheader("💬 Customer Feedback Insights")
 
 if st.button("🔍 Analyze Feedback"):
 
-    response = requests.post("http://127.0.0.1:8000/nlp-insights")
+    response = requests.post("https://ai-business-intelligence-platform.onrender.com/nlp-insights")
 
     if response.status_code == 200:
         insights = response.json()["insights"]
